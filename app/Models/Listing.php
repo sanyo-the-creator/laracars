@@ -1,35 +1,19 @@
-<?php 
+<?php
 
-    namespace App\Models;
+namespace App\Models;
 
-    class Listing {
-        public static function allListings() {
-            return [
-                [
-                    'id' => 1,
-                    'title' => 'Volkswagen',
-                    'desc' => 'facist ziguli yeaaaah'
-                ],
-                [
-                    'id' => 2,
-                    'title' => 'Skoda',
-                    'desc' => 'czech ziguli yeaaaah'
-                ],
-                [
-                    'id' => 3,
-                    'title' => 'Audi',
-                    'desc' => '300km/h ziguli yeaaaah'
-                ],
-            ];
-        }
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-        public static function find($id) {
-            $listings = self::allListings();
+class Listing extends Model
+{
+    use HasFactory;
 
-            foreach($listings as $listing) {
-                if($listing['id'] == $id) {
-                    return $listing;
-                }
-            }
-        }
-    }
+    // protected $fillable = ['title', 'company', 'location', 'email', 'tags', 'description'];
+
+    // public function scopeFilters($query, array $filters) {
+    //     if($filters['tag'] ?? false) {
+    //         $query->where('tag', 'like', '%' . request('tag') . '%');
+    //     }
+    // }
+}
