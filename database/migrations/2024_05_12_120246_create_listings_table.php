@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('email');
             $table->longText('description');
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }

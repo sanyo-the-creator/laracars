@@ -11,9 +11,9 @@ class Listing extends Model
 
     // protected $fillable = ['title', 'company', 'location', 'email', 'tags', 'description'];
 
-    // public function scopeFilters($query, array $filters) {
-    //     if($filters['tag'] ?? false) {
-    //         $query->where('tag', 'like', '%' . request('tag') . '%');
-    //     }
-    // }
+    public function scopeFilters($query, array $filters) {
+        if($filters['tag'] ?? false) {
+            $query->where('tag', 'like', '%' . request('tag') . '%');
+        }
+    }
 }
